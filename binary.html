@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<head>
+</head>
+<body>
+    <script type="text/javascript">
+       
+        function bsearch(num,item)
+        {
+            var beg=0,last=9,mid=0;
+            while(beg<=last)
+            {
+                mid=parseInt((beg+last)/2);
+                if(item==num[mid])
+                    {
+                    return mid;
+                    }
+                    else if(item>num[mid])
+                     {
+                      beg=mid+1;
+                       }
+                else
+                {
+                    last=mid-1;
+                }
+                
+            }
+            return -999;
+        }
+        function search()
+        {
+            var num=[11,22,33,44,55,66,77,88,99,100];
+            var item=22;
+            var index=bsearch(num,item);
+            if(index>=0)
+            {
+                console.log(num[index]);
+            }
+            else
+            {
+                console.log("not found");
+            }
+        }
+        window.onload=search();
+      
+        </script>
+        </html>
